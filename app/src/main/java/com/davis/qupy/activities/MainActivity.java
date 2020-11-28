@@ -1,8 +1,10 @@
-package com.davis.qupy;
+package com.davis.qupy.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.davis.qupy.R;
 
 public class MainActivity extends AppCompatActivity {
 
