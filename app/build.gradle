@@ -14,6 +14,15 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    buildFeatures {
+        dataBinding true
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -23,11 +32,40 @@ android {
 }
 
 dependencies {
+    def room_version = "2.2.5"
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
+
+    //material design
+    implementation 'com.google.android.material:material:1.2.1'
+
+    //Retrofit & Gson converter
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+
+    //lifecycle extensions
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
+
+    //Room & RxJava support
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    implementation 'androidx.room.room-rxjava3:3.0.5'
+
+    //RxJava
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+
+    //scalable size units
+    implementation 'com.intuit.sdp:sdp-android:1.0.6'
+    implementation 'com.intuit.ssp:ssp-android:1.0.6'
+    //round corners on in image
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    implementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
 }
